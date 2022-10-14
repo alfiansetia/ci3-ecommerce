@@ -1,4 +1,7 @@
 <div class="container">
+<br><br>
+<?php var_dump($product); ?>
+<br><br>
     <div id="myCarousel" class="carousel slide" style="margin-bottom:0">
         <div class="carousel-inner">
             <div class="item">
