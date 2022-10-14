@@ -1,7 +1,4 @@
 <div class="container">
-<br><br>
-<?php var_dump($product); ?>
-<br><br>
     <div id="myCarousel" class="carousel slide" style="margin-bottom:0">
         <div class="carousel-inner">
             <div class="item">
@@ -85,110 +82,21 @@
                 <h1>&raquo; Products List</h1>
             </div>
             <ul class="thumbnails">
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/1.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
+                <?php foreach ($products as $key => $data) { ?>
+                    <li class="span3">
+                        <div class="thumbnail">
+                            <h3 class="btn-success"><?= $data->product_name ?></h3>
+                            <img src="<?= base_url('assets/main/img/product/' . $data->product_image) ?>" alt="" />
+                            <div class="action btn-primary">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
+                                    <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
+                                </div>
+                                &nbsp;Rp <?= $data->product_price ?>
                             </div>
-                            &nbsp;Rp999.999.999.999
                         </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/2.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/3.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/1.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/2.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/3.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/2.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
-                <li class="span3">
-                    <div class="thumbnail">
-                        <h3 class="btn-success">Product Name</h3>
-                        <img src="<?= base_url('assets/main/img/product/2.jpeg') ?>" alt="" />
-                        <div class="action btn-primary">
-                            <div class="btn-group">
-                                <a href="./product_detail.html" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                                <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
-                            </div>
-                            &nbsp;Rp999.999.999.999
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                <?php } ?>
             </ul>
             <div class="pagination pagination-centered">
                 <ul>

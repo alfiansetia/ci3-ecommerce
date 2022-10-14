@@ -14,7 +14,7 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$data['product'] = $this->Product_m->getAll();
+		$data['products'] = $this->Product_m->getAll();
 		$this->load->view('body/header');
 		$this->load->view('body/nav');
 		$this->load->view('product/product', $data);
