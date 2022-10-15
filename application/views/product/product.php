@@ -70,7 +70,7 @@
                                 <a href="<?= base_url('home/detail/' . $data->product_slug) ?>" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
                                 <button type="submit" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></button>
                             </div>
-                            &nbsp;Rp <?= $data->product_price ?>
+                            &nbsp;Rp <?= $this->cart->format_number($data->product_price) ?>
                         </div>
                     </div>
                 </form>

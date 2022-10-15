@@ -66,7 +66,7 @@
                 </tr>
                 <tr>
                     <td>Price</td>
-                    <td>Rp. <?= $product->product_price ?></td>
+                    <td>Rp. <?= $this->cart->format_number($product->product_price) ?></td>
                 </tr>
                 <tr>
                     <td>Available</td>
@@ -74,11 +74,11 @@
                 </tr>
                 <tr>
                     <td>Category</td>
-                    <td><a href="#"><?= $product->category_name ?></a></td>
+                    <td><a href="<?= base_url('home?category=' . $product->category_id) ?>"><?= $product->category_name ?></a></td>
                 </tr>
                 <tr>
                     <td>Brand</td>
-                    <td><a href="#"><?= $product->brand_name ?></a></td>
+                    <td><a href="<?= base_url('home?brand=' . $product->brand_id) ?>"><?= $product->brand_name ?></a></td>
                 </tr>
                 <tr>
                     <td>Rating</td>
