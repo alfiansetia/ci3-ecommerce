@@ -57,17 +57,23 @@
     <ul class="thumbnails">
         <?php foreach ($products as $key => $data) { ?>
             <li class="span3">
-                <div class="thumbnail">
-                    <h3 class="btn-success"><?= $data->product_name ?></h3>
-                    <img src="<?= base_url('assets/main/img/product/' . $data->product_image) ?>" alt="" />
-                    <div class="action btn-primary">
-                        <div class="btn-group">
-                            <a href="<?= base_url('home/detail/' . $data->product_slug) ?>" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
-                            <a href="#" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></a>
+                <form action="<?= base_url('home/addtocart/') ?>" method="POST">
+                    <input type="hidden" name="id" value="<?= $data->product_id ?>">
+                    <input type="hidden" name="name" value="<?= $data->product_name ?>">
+                    <input type="hidden" name="price" value="<?= $data->product_price ?>">
+                    <input type="hidden" name="qty" value="1">
+                    <div class="thumbnail">
+                        <h3 class="btn-success"><?= $data->product_name ?></h3>
+                        <img src="<?= base_url('assets/main/img/product/' . $data->product_image) ?>" alt="" />
+                        <div class="action btn-primary">
+                            <div class="btn-group">
+                                <a href="<?= base_url('home/detail/' . $data->product_slug) ?>" class="btn btn-warning" title="product detail"><i class="icon-search icon-white"></i></a>
+                                <button type="submit" class="btn btn-warning action-add-item" title="add to cart"><i class="icon-shopping-cart icon-white"></i></button>
+                            </div>
+                            &nbsp;Rp <?= $data->product_price ?>
                         </div>
-                        &nbsp;Rp <?= $data->product_price ?>
                     </div>
-                </div>
+                </form>
             </li>
         <?php } ?>
     </ul>

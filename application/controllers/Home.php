@@ -47,6 +47,37 @@ class Home extends CI_Controller
 		}
 	}
 
+	public function addtocart()
+	{
+		$post = $this->input->post(NULL, TRUE);
+		if ($post != null) {
+			$data = [
+				'id'      	=> $post['id'],
+				'qty'     	=> $post['qty'],
+				'price'   	=> $post['price'],
+				'name'    	=> $post['name'],
+				'subtotal' 	=> $post['qty'] * $post['price'],
+			];
+			$this->cart->insert($data);
+			$this->session->set_flashdata('success', 'Success add to cart');
+			redirect('home');
+		} else {
+			show_404();
+		}
+	}
+
+	public function deletecartitem()
+	{
+		$post = $this->input->post(NULL, TRUE);
+		if ($post != null) {
+			$this->cart->remove($post['rowid']);
+			$this->session->set_flashdata('success', 'Success delete item from cart');
+			redirect('home');
+		} else {
+			show_404();
+		}
+	}
+
 	public function about()
 	{
 		$data['category'] = $this->Category_m->getByActive();

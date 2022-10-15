@@ -35,7 +35,10 @@
                <li><a href="<?= base_url('home/faq') ?>">faq</a></li>
             </ul>
             <div class="pull-right">
-               <a id="action-show-cart" class="btn btn-danger" href="#"><i class="icon-shopping-cart icon-white"></i> <span id="item-count">5</span> item(s)</a>
+               <a id="action-show-cart" class="btn btn-danger" href="#">
+                  <i class="icon-shopping-cart icon-white"></i>
+                  <span id="item-count"><?= count($this->cart->contents()) ?></span> item(s)
+               </a>
                <a class="btn btn-primary" href="./login.html">Login</a>
                <a class="btn btn-success" href="./register.html">Register</a>
             </div>
@@ -45,24 +48,24 @@
 </div>
 
 <div class="container">
-    <div id="myCarousel" class="carousel slide" style="margin-bottom:0">
-        <div class="carousel-inner">
-            <div class="item">
-                <img src="<?= base_url('assets/main/img/banner/1.png') ?>" alt="">
-            </div>
-            <div class="item">
-                <img src="<?= base_url('assets/main/img/banner/2.png') ?>" alt="">
-            </div>
-            <div class="item active">
-                <img src="<?= base_url('assets/main/img/banner/3.jpeg') ?>" alt="">
-            </div>
-        </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div>
-    <ul class="breadcrumb" style="margin-bottom:30px">
-        <li><a href="<?= base_url('home') ?>">Home</a> <span class="divider">/</span></li>
-        <li class="active">You are here</li>
-    </ul>
-    <div class="row">
+   <div id="myCarousel" class="carousel slide" style="margin-bottom:0">
+      <div class="carousel-inner">
+         <div class="item">
+            <img src="<?= base_url('assets/main/img/banner/1.png') ?>" alt="">
+         </div>
+         <div class="item">
+            <img src="<?= base_url('assets/main/img/banner/2.png') ?>" alt="">
+         </div>
+         <div class="item active">
+            <img src="<?= base_url('assets/main/img/banner/3.jpeg') ?>" alt="">
+         </div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+   </div>
+   <ul class="breadcrumb" style="margin-bottom:30px">
+      <li><a href="<?= base_url('home') ?>">Home</a> <span class="divider">/</span></li>
+      <li class="active">You are here</li>
+   </ul>
+   <div class="row">
