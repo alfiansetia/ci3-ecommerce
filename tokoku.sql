@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 14 Okt 2022 pada 15.39
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 15 Okt 2022 pada 02.41
 -- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.1.6
+-- Versi PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,11 +71,13 @@ INSERT INTO `category` (`category_id`, `category_name`, `category_image`, `categ
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
+  `product_code` varchar(50) DEFAULT NULL,
   `product_name` varchar(50) NOT NULL,
   `product_category` int(11) DEFAULT NULL,
   `product_brand` int(11) DEFAULT NULL,
   `product_price` int(11) NOT NULL,
   `product_disc` int(11) DEFAULT NULL,
+  `product_slug` varchar(100) DEFAULT NULL,
   `product_image` varchar(100) DEFAULT NULL,
   `product_status` int(11) NOT NULL DEFAULT 1,
   `product_stok` int(11) NOT NULL DEFAULT 0,
@@ -86,10 +88,10 @@ CREATE TABLE `products` (
 -- Dumping data untuk tabel `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_category`, `product_brand`, `product_price`, `product_disc`, `product_image`, `product_status`, `product_stok`, `product_desc`) VALUES
-(1, 'Celana Chino', 2, 1, 100000, NULL, '1.jpeg', 1, 1, 'ok banget nih'),
-(2, 'Jas Setelan', 1, 1, 200000, NULL, '2.jpeg', 1, 2, 'ini juga oke banget'),
-(3, 'Celana Pendek', 2, 2, 50000, 10, '3.jpeg', 1, 2, 'celana pendek racing');
+INSERT INTO `products` (`product_id`, `product_code`, `product_name`, `product_category`, `product_brand`, `product_price`, `product_disc`, `product_slug`, `product_image`, `product_status`, `product_stok`, `product_desc`) VALUES
+(1, 'CL-001', 'Celana Chino', 2, 1, 100000, NULL, 'celana-chino', '1.jpeg', 1, 1, 'ok banget nih'),
+(2, 'JS-001', 'Jas Setelan', 1, 1, 200000, NULL, 'jas-setelan', '2.jpeg', 1, 2, 'ini juga oke banget'),
+(3, 'CL-002', 'Celana Pendek', 2, 2, 50000, 10, 'celana-pendek', '3.jpeg', 1, 2, 'celana pendek racing');
 
 --
 -- Indexes for dumped tables
@@ -112,6 +114,7 @@ ALTER TABLE `category`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
+  ADD UNIQUE KEY `product_slug` (`product_slug`),
   ADD KEY `product_category` (`product_category`,`product_brand`),
   ADD KEY `product_brand` (`product_brand`);
 

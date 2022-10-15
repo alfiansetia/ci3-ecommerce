@@ -1,3 +1,8 @@
+
+    </div>
+
+</div>
+<!-- /.container -->
 <div class="dafooter">
          <div class="container">
             <div class="row">
@@ -79,10 +84,10 @@
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
          </div>
       </div>
-      <script type="text/javascript" src="./assets/main/js/bootstrap.min.js" charset="UTF-8"></script>
-      <script type="text/javascript" src="./assets/plugin/bootstrap-select/bootstrap-select.js" charset="UTF-8"></script>
-      <script type="text/javascript" src="./assets/plugin/blockui/jquery.blockUI.js" charset="UTF-8"></script>
-      <script type="text/javascript" src="./assets/plugin/alertify/alertify.min.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="<?= base_url() ?>assets/main/js/bootstrap.min.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="<?= base_url() ?>assets/plugin/bootstrap-select/bootstrap-select.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="<?= base_url() ?>assets/plugin/blockui/jquery.blockUI.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="<?= base_url() ?>assets/plugin/alertify/alertify.min.js" charset="UTF-8"></script>
       <SCRIPT type="text/javascript">
          $(document).ready(function(){
          
@@ -105,7 +110,7 @@
          		e.preventDefault();
          		$.blockUI({
          			showOverlay: false, 
-         			message: "<img src='./assets/main/img/loading.gif' />", 
+         			message: "<img src='<?= base_url() ?>assets/main/img/loading.gif' />", 
          			css: {
          				top:  ($(window).height() - 30) /2 + 'px', 
                        			left: ($(window).width() - 80) /2 + 'px',
